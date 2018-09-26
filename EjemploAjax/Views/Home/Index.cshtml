@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script>
+    /* $(document).ready(iniciar);
+
+     function iniciar() {
+         var btn = $("#enviar");
+         btn.click(accion);
+     }
+
+     function accion() {
+         var num = $("#numero");
+         $.ajax({
+             type: "POST",
+             url: "/Home/operacion",
+             data: { numero: num.val()},
+             success: procesar
+         });
+         return false;
+     }
+
+     function procesar(response) {
+         var div = $("#resultado");
+         div.html(response)
+     }*/
+    $(document).ready(inicio);
+
+    function inicio() {
+        var btn = $("#enviar");
+        btn.click(accionClick);
+    }
+
+    function accionClick() {
+        var valor1 = $("#n1");
+        var valor2 = $("#n2");
+        var valor3 = $("#opr");
+
+
+        $.ajax({
+            type: "POST",
+            url: "/Home/operacion",
+            data: {
+                n1: valor1.val(),
+                n2: valor2.val(),
+                opr: valor3.val()
+            },
+
+            success: recibir
+        });
+        return false;
+    }
+    function recibir(response) {
+        var div = $("#Resultado");
+        div.html(response);
+    }
+
+
+</script>
+
+<!--<div class="row">
+    <div class="col-ls-offset-2 col-lg-4">
+      <input  type="text" id="numero" class="form-control"/><br /><br />
+        <button id="enviar" class="btn btn-primary">enviar</button>
+
+    </div>
+
+    <div class="col-lg-4">
+        <div id="resultado"></div>
+    </div>
+</div>-->
+<h1>Operaciones utilizado Ajax</h1>
+<hr>
+    Numero 1: <input type="text" id="n1"><br><br>
+    Numero 2: <input type="text" id="n2">
+
+<select id="opr">
+    <option value="Potencia">Potencia</option>
+    <option value="Factorial">Factorial</option>
+    <option value="Mayor">Mayor</option>
+    <option value="Menor">Menor</option>
+</select>
+<br><br>
+
+<button id="enviar">Enviar</button>
+<hr>
+<h2>Respueta</h2>
+<div id="Resultado"></div>

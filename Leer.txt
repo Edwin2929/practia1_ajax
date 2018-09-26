@@ -1,0 +1,1 @@
+practiac ajax realizada con la funcion de potenciar, verificar cual es el menor y mayor y sacar un factorial de 2 numeros

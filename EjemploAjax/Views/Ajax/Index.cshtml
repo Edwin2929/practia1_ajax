@@ -1,0 +1,17 @@
+﻿
+<h2>Mi pagina con AJAX, sin JQUERY</h2>
+@using (Ajax.BeginForm("Operar", new AjaxOptions()
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "Resultado"
+}))
+ {
+    <input type="text" name="mombre" />
+    <input type="submit" value="procesar" />
+ }
+<div id="Resultado">
+
+</div>
+
+   
+
